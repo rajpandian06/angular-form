@@ -1,0 +1,104 @@
+<!-- start -alert -->
+
+<div class="container">
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert" *ngIf="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+        <strong>Success!</strong> You have successfully submitted.
+    </div>
+</div>
+
+<!-- end -alert -->
+
+<!-- start -contact -->
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-lg-8 col-12 my-3">
+                <form [formGroup]="userForm" (ngSubmit)="validate()">
+                    <div class="mb-3 contact">
+                        <label for="fullname" class="form-label">Full Name</label>
+                        <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter name"
+                            aria-describedby="msg1" formControlName="fullname">
+                        <i class="fas fa-exclamation-circle wrong" style="color: #eb2f06;"
+                            *ngIf="fullname && fullname.invalid && fullname.touched"></i>
+                        <i class="fas fa-check-circle" style="color: #009432;"
+                            *ngIf="fullname && fullname.valid && fullname.touched"></i>
+                        <small id="msg1" style="color: #eb2f06;"
+                            *ngIf="fullname && fullname.invalid &&fullname.touched">
+                            <span *ngIf="fullname.errors?.required">Enter ur name</span>
+                            <span *ngIf="fullname.errors?.pattern">only small a-z letter's are allowed</span>
+                        </small>
+                    </div>
+                    <div class="mb-3 contact">
+                        <label for="number" class="form-label">Mobile Number</label>
+                        <input type="text" name="number" id="number" class="form-control" placeholder="Enter number"
+                            aria-describedby="msg2" formControlName="number" maxlength="10">
+                        <i class="fas fa-exclamation-circle wrong" style="color: #eb2f06;"
+                            *ngIf="number && number.invalid && number.touched"></i>
+                        <i class="fas fa-check-circle" style="color: #009432;"
+                            *ngIf="number && number.valid && number.touched"></i>
+                        <small id="msg1" style="color: #eb2f06;" *ngIf="number && number.invalid &&number.touched">
+                            <span *ngIf="number.errors?.required">Enter ur number</span>
+                            <span *ngIf="number.errors?.pattern">Enter a valid 10 digit number</span>
+                        </small>
+                    </div>
+                    <div class="mb-3 contact">
+                        <label for="email" class="form-label">Email-Id</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="example@123.com"
+                            aria-describedby="msg3" formControlName="email">
+                        <i class="fas fa-exclamation-circle wrong" style="color: #eb2f06;"
+                            *ngIf="email && email.invalid && email.touched"></i>
+                        <i class="fas fa-check-circle" style="color: #009432;"
+                            *ngIf="email && email.valid && email.touched"></i>
+                        <small id="msg1" style="color: #eb2f06;" *ngIf="email && email.invalid &&email.touched">
+                            <span *ngIf="email.errors?.required">Enter ur email-id</span>
+                            <span *ngIf="email.errors?.pattern">Enter a valid email-id</span>
+                        </small>
+                    </div>
+                    <div class="mb-3 contact">
+                        <label for="feedback" class="form-label">Feedback</label>
+                        <textarea class="form-control" name="feedback" id="feedback" rows="3"
+                            placeholder="Leave ur feedback here" aria-describedby="msg4"
+                            formControlName="feedback"></textarea>
+                        <i class="fas fa-exclamation-circle wrong" style="color: #eb2f06;"
+                            *ngIf="feedback && feedback.invalid && feedback.touched"></i>
+                        <i class="fas fa-check-circle" style="color: #009432;"
+                            *ngIf="feedback && feedback.valid && feedback.touched"></i>
+                        <small id="msg1" style="color: #eb2f06;"
+                            *ngIf="feedback && feedback.invalid &&feedback.touched">
+                            <span *ngIf="feedback.errors?.required">Please write ur feedback</span>
+                        </small>
+                    </div>
+                    <div class="text-center my-5">
+                        <button type="submit" class="btn btn-lg text-light"
+                            [disabled]="userForm.invalid">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</section>
+
+<!-- end -contact -->
+
+ <!-- start -footer -->
+
+ <footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center py-2">
+               <a href="http://facebook.com/rajpandian06"><i class="fab fa-facebook mx-3"></i></a> 
+               <a href="http://instagram.com/rajpandian_06"><i class="fab fa-instagram mx-3"></i></a> 
+               <a href="http://twitter.com/rajpandian06"><i class="fab fa-twitter mx-3"></i></a> 
+            </div>
+        </div>
+    </div>
+</footer>
+<router-outlet></router-outlet>
+
+
+<!-- end -footer -->

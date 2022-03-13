@@ -1,0 +1,55 @@
+#contact{
+    min-height: 70vh;
+    width: 100%;
+    margin: 2% 0%;
+}
+.contact{
+    position: relative;
+}
+.contact i{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 25px;
+}
+.wrong{
+    position: absolute;
+    right: 20px;
+    top: 44px;
+    font-size: 25px;
+}
+input{
+    padding: 10px;
+    font-size: 16px;
+}
+input.ng-invalid.ng-touched{
+    border: 2px solid #eb2f06;
+    box-shadow: 0px 0px 10px #ffffff;
+}
+input.ng-valid.ng-touched{
+    border: 2px solid #009432;
+    box-shadow: 0px 0px 10px #ffffff;
+}
+textarea.ng-invalid.ng-touched{
+    border: 2px solid #eb2f06;
+    box-shadow: 0px 0px 10px #ffffff;
+}
+textarea.ng-valid.ng-touched{
+    border: 2px solid #009432;
+    box-shadow: 0px 0px 10px #ffffff;
+}
+#contact button{
+    background-color: #192a56;
+}
+#footer{
+    background-color: #192a56;
+}
+#footer i{
+    color: #ffffff;
+    font-size: 25px;
+    padding: 5px 0px;
+}
+#footer i:hover{
+    transform: rotate(360deg);
+    transition: transform 1.3s ease;
+}
